@@ -32,6 +32,10 @@ As a user (visitor) I want to be able to see a history of blog posts
 
 As a user (visitor) I want to sign up for newsletters
 
+## Component Hierarchy
+
+[<img src="https://i.imgur.com/OqLnR4m.jpg" />](https://www.figma.com/file/lnlyAWGKbSV793NsWlKu2O/PixiDreams-Component-Hierarchy-Diagram?node-id=0-1&t=Held0osazqkXi0xM-0)
+
 ## ERD
 
 [<img src="https://i.imgur.com/gT4DDgg.jpg" />](https://lucid.app/lucidchart/03541913-63d1-478b-8f7b-f2cb409c6ab1/edit?invitationId=inv_df5359b9-daa5-458b-892e-673bad4e59b5&page=0_0#)
@@ -47,3 +51,9 @@ As a user (visitor) I want to sign up for newsletters
 ## Figma
 
 [<img src="https://i.imgur.com/o7fPTuE.png"/>](https://www.figma.com/file/UlAZUewHI8CobzZqqQxpoY/PixiDreams---P3?node-id=0-1&t=8TzbLYFZGzQwX3V3-0)
+
+## Stretch Goals
+
+Authentication for registeration and signing in
+
+Image uploader during blog creation
