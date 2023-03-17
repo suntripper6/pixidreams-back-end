@@ -57,3 +57,7 @@ As a user (visitor) I want to sign up for newsletters
 Authentication for registeration and signing in
 
 Image uploader during blog creation
+
+Live Search Bar
+
+Replying to comments
