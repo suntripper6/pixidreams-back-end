@@ -37,7 +37,7 @@ module.exports = {
       user_id: {
         type: Sequelize.INTEGER
       },
-    createdAt: {
+      createdAt: {
         field: 'created_at',
         allowNull: false,
         type: Sequelize.DATE,

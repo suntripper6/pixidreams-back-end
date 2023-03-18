@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Content.belongsTo(models.User, {
         foreignKey: 'user_id',
-        as: 'user',
+        as: 'contents',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       });
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     review: DataTypes.STRING,
     postDate: DataTypes.DATE,
     likes: DataTypes.INTEGER,
-    user_id: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       field: 'user_id',
