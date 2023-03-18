@@ -2,7 +2,10 @@
   "development": {
     "database": "pixidreams_development",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "define": {
+      "underscored": true
+    }
   },
   "test": {
     "database": "pixidreams_test",
