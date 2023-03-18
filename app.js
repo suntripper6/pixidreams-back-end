@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
+// Contains all routes in one file/directory
 const AppRouter = require("./routes/AppRouter");
 
 const PORT = process.env.PORT || 3001;
