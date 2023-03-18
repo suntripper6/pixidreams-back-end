@@ -10,33 +10,44 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       title: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+         allowNull: false
       },
       image: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+         allowNull: false
       },
       synopsis: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+         allowNull: false
       },
       review: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+         allowNull: false
       },
       postDate: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+         allowNull: false
       },
       likes: {
-        type: Sequelize.INTEGER
-      },
-      userId: {
-        type: Sequelize.INTEGER
-      },
-      createdAt: {
+        type: Sequelize.INTEGER,
         allowNull: false,
-        type: Sequelize.DATE
+        defaultValue: 0
+      },
+      user_id: {
+        type: Sequelize.INTEGER
+      },
+    createdAt: {
+        field: 'created_at',
+        allowNull: false,
+        type: Sequelize.DATE,
+        defaultValue: new Date()
       },
       updatedAt: {
+        field: 'updated_at',
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date()
       }
     });
   },
