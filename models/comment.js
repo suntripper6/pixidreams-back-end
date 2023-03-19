@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Comment extends Model {
     /**
@@ -11,56 +9,49 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Comment.belongsTo(models.User, {
-        foreignKey: 'user_id',
-        as: 'users',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
-      })
+        foreignKey: "user_id",
+        as: "users",
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+      });
       Comment.belongsTo(models.Content, {
-        foreignKey: 'content_id',
-        as: 'contents',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
-      })
+        foreignKey: "content_id",
+        as: "contents",
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+      });
     }
   }
-  Comment.init({
-    comment: DataTypes.STRING,
-    likes: DataTypes.INTEGER,
-    contentId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      field: 'content_id',
-      onDelete: 'CASCADE',
-      references: {
-        model: 'contents',
-        key: 'id'
-      }
+  Comment.init(
+    {
+      comment: DataTypes.STRING(500),
+      likes: DataTypes.INTEGER,
+      contentId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        field: "content_id",
+        onDelete: "CASCADE",
+        references: {
+          model: "contents",
+          key: "id",
+        },
+      },
+      userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        field: "user_id",
+        onDelete: "CASCADE",
+        references: {
+          model: "users",
+          key: "id",
+        },
+      },
     },
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      field: 'user_id',
-      onDelete: 'CASCADE',
-      references: {
-        model: 'users',
-        key: 'id'
-      }
-    },
-     contentId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      field: 'content_id',
-      onDelete: 'CASCADE',
-      references: {
-        model: 'contents',
-        key: 'id'
-      }
-    },
-  }, {
-    sequelize,
-    modelName: 'Comment',
-    tableName: 'comments'
-  });
+    {
+      sequelize,
+      modelName: "Comment",
+      tableName: "comments",
+    }
+  );
   return Comment;
 };
