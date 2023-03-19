@@ -1,5 +1,5 @@
 'use strict'
-const { User, Comment, sequelize } = require('../models')
+const { User, Content, sequelize } = require('../models')
 const { Op } = require('sequelize')
 const falso = require('@ngneat/falso')
 module.exports = {
@@ -13,12 +13,10 @@ module.exports = {
           raw: true
         })
         return {
-          content: falso.randParagraph(),
+          comment: falso.randParagraph(),
           likes: falso.randNumber({ min: 0, max: 40000 }),
           user_id: user.id,
           content_id: content.id,
-          createdAt: new Date(),
-          updatedAt: new Date()
         }
       })
     )
