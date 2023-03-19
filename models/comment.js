@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Comment.belongsTo(models.User, {
         foreignKey: 'user_id',
-        as: 'owner',
+        as: 'users',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
@@ -46,7 +46,17 @@ module.exports = (sequelize, DataTypes) => {
         model: 'users',
         key: 'id'
       }
-    }
+    },
+     contentId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      field: 'content_id',
+      onDelete: 'CASCADE',
+      references: {
+        model: 'contents',
+        key: 'id'
+      }
+    },
   }, {
     sequelize,
     modelName: 'Comment',
