@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     image: DataTypes.STRING,
     synopsis: DataTypes.STRING,
     review: DataTypes.STRING,
-    postDate: DataTypes.DATE,
+    post_date: DataTypes.DATE,
     likes: DataTypes.INTEGER,
     userId: {
       type: DataTypes.INTEGER,

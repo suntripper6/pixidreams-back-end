@@ -1,19 +1,18 @@
-'use strict';
+'use strict'
 const { User, sequelize } = require('../models')
-const faker = require('faker');
-
+const falso = require('@ngneat/falso')
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     const contents = await Promise.all(
       [...Array(400)].map(async () => {
         let user = await User.findOne({ order: sequelize.random(), raw: true })
         return {
-          title: faker.lorem.words(5),
-          image: faker.lorem.words(1),
-          synopsis: faker.lorem.words(10),
-          review: faker.lorem.words(20),
-          likes: faker.datatype.number({ min: 10, max: 100 }),
-          postDate: faker.date.past(),
+          title: falso.randMovie(),
+          image: falso.randImg(),
+          synopsis: falso.randParagraph(),
+          review: falso.randParagraph(),
+          likes: falso.randNumber({ min: 0, max: 40000 }),
+          post_date: falso.randPastDate(),
           user_id: user.id,
         }
       })
@@ -22,9 +21,10 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('contents', {})
+    return queryInterface.bulkDelete('contents')
   }
 }
+
 
 
 

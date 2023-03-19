@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       })
       Comment.belongsTo(models.Content, {
         foreignKey: 'content_id',
-        as: 'comments',
+        as: 'contents',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })

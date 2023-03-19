@@ -25,7 +25,7 @@ module.exports = {
         type: Sequelize.STRING,
          allowNull: false
       },
-      postDate: {
+      post_date: {
         type: Sequelize.DATE,
          allowNull: false
       },
