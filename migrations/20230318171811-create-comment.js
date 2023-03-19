@@ -34,7 +34,7 @@ module.exports = {
           model: 'users',
           key: 'id'
         }
-      }, 
+      },
       createdAt: {
         field: 'created_at',
         allowNull: false,
