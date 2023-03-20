@@ -1,6 +1,6 @@
 {
   "development": {
-     "database": "pixidreams_development",
+    "database": "pixidreams_development",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "define": {
