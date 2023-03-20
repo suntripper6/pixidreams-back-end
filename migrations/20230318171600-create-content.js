@@ -28,6 +28,7 @@ module.exports = {
       post_date: {
         type: Sequelize.DATE,
         allowNull: false,
+        defaultValue: new Date()
       },
       likes: {
         type: Sequelize.INTEGER,
