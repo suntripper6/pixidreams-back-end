@@ -32,7 +32,7 @@ module.exports = {
       },
       likes: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
         defaultValue: 0,
       },
       userId: {

@@ -11,18 +11,18 @@ const GetAllComments = async (req, res) => {
   }
 
 const GetComment = async (req, res) => {
-try{
-    let userId = req.params.user_id;
-    let comments = await Comment.findAll({
-        where: {
-            user_id : userId
-        }
-    })
-    res.send(comments)
-} 
-    catch (error) {
-    throw error
-}
+  try{
+      let contentId = req.params.content_id;
+      let comments = await Comment.findOne({
+          where: {
+              content_id : contentId
+          }
+      })
+      res.send(comments)
+  } 
+  catch (error) {
+      throw error
+  }
 }
 
 const GetRecentComment = async (req, res) => {
@@ -36,9 +36,9 @@ const GetRecentComment = async (req, res) => {
 
 const CreateComment = async (req, res) => {
   try {
-    let contentId = parseInt(req.params.content_id);
+    let userId = parseInt(req.params.user_id);
     let commentBody = {
-      contentId,
+      userId,
       ...req.body,
     };
     let comment = await Comment.create(commentBody);
