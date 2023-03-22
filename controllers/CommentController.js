@@ -12,10 +12,10 @@ const GetAllComments = async (req, res) => {
 
 const GetComment = async (req, res) => {
   try{
-      let contentId = req.params.content_id;
-      let comments = await Comment.findOne({
+      let userId = req.params.user_id;
+      let comments = await Comment.findAll({
           where: {
-              content_id : contentId
+              user_id : userId
           }
       })
       res.send(comments)
