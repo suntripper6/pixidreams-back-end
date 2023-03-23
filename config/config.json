@@ -1,7 +1,5 @@
 {
   "development": {
-    "username": "toni",
-    "password": "jennielove2018",
     "database": "pixidreams_development",
     "host": "127.0.0.1",
     "dialect": "postgres",
@@ -10,15 +8,11 @@
     }
   },
   "test": {
-    "username": "toni",
-    "password": "jennielove2018",
    "database": "pixidreams_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "username": "toni",
-    "password": "jennielove2018",
    "database": "pixidreams_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
